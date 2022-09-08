@@ -2,7 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const WeatherSlice = createSlice({
   name: "Weather",
-  initialState: [],
+  initialState: {
+    current: {
+      temperature: "",
+      precip: "",
+      wind_speed: "",
+    },
+  },
   reducers: {
     setWeather: (state, action: PayloadAction<any>) => action.payload,
   },

@@ -19,7 +19,7 @@ const Styles = StyleSheet.create({
     justifyContent: "space-between",
     gap: 10,
     width: "100%",
-    margin:12
+    margin: 12,
   },
   Info: {
     fontSize: 19,
@@ -51,8 +51,17 @@ interface Props {
   navigation: NavigationProp<any>;
 }
 
+interface ReducerInterface {
+  capital: string;
+  population: string;
+  latlng: number[];
+  flags: {
+    png: string;
+  };
+}
+
 const CountryScreen: React.FC<Props> = ({ navigation }) => {
-  const Capital = useReduxSelector((state) => state.Capital);
+  const Capital: ReducerInterface = useReduxSelector((state) => state.Capital);
   const dispatch = useReduxDispatch();
   const handleSubmit = () => {
     var config = {
